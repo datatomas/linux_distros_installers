@@ -4,8 +4,6 @@
 
 set -e  # Exit on any error
 
-echo "Updating package list..."
-sudo apt update -y
 
 echo "Installing Git..."
 sudo apt install git -y
