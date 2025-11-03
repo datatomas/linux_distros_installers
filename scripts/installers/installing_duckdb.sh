@@ -1,23 +1,23 @@
 #!/bin/bash
-# install_duckdb.sh
-# Installs DuckDB CLI and Python package on Ubuntu/Debian
+# simple_duckdb_install.sh
+# Simple installation of DuckDB Python package (CLI optional)
 
 set -e  # Exit on any error
 
 echo "Updating package list..."
 sudo apt update -y
 
-# --- Install DuckDB CLI ---
-echo "Installing DuckDB CLI..."
-sudo apt install duckdb -y
-echo "DuckDB CLI installed. Version: $(duckdb --version || echo 'CLI not available')"
-echo
+# --- Install Python pip if not installed ---
+sudo apt install python3-pip -y
 
 # --- Install DuckDB Python package ---
-echo "Installing DuckDB Python package..."
-pip3 install --upgrade pip
-pip3 install duckdb
-echo "DuckDB Python package installed. Version: $(python3 -c 'import duckdb; print(duckdb.__version__)')"
-echo
+python3 -m pip install --upgrade pip
+python3 -m pip install duckdb
 
-echo "DuckDB installation complete!"
+# --- Optional: DuckDB CLI ---
+# wget https://github.com/duckdb/duckdb/releases/latest/download/duckdb_cli-linux-amd64.zip -O /tmp/duckdb_cli.zip
+# unzip /tmp/duckdb_cli.zip -d /tmp
+# sudo mv /tmp/duckdb /usr/local/bin/duckdb
+# rm /tmp/duckdb_cli.zip
+
+echo "DuckDB Python installed successfully!"
