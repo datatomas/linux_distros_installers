@@ -1,0 +1,7 @@
+# Data partition
+ln -s /mnt/data ~/data
+
+# Disaster recovery partition
+ln -s /mnt/disaster_recovery ~/disaster_recovery
+cd ~/data
+ls
