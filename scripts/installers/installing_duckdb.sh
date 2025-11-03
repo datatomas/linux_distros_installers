@@ -4,9 +4,6 @@
 
 set -e  # Exit on any error
 
-echo "Updating snap..."
-sudo snap install core
-
 # --- Install DuckDB CLI via snap ---
 echo "Installing DuckDB CLI via snap..."
 sudo snap install duckdb
