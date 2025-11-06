@@ -1,8 +1,14 @@
+# Install Geany + Git
 sudo apt update
 sudo apt install -y geany git
-mkdir -p /home/ares/data/gitrepos
-# Copy the git repos so you can get dark geany
-cd /home/ares/data/gitrepos
-git clone https://github.com/yourusername/ml_kuda_sports_lab.git
-cd ml_kuda_sports_lab
 
+# Workspace
+mkdir -p /home/ares/data/gitrepos
+cd /home/ares/data/gitrepos
+
+# Clone Geany themes (this is what you want)
+git clone https://github.com/geany/geany-themes.git
+
+# Install the themes for your user
+mkdir -p ~/.config/geany/colorschemes
+cp geany-themes/colorschemes/*.conf ~/.config/geany/colorschemes/
